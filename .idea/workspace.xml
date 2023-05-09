@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f605482-8589-48be-a02d-61156f40b980" name="Changes" comment="Added images">
-      <change beforePath="$PROJECT_DIR$/src/Vista/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/mainMenu.java" afterDir="false" />
+    <list default="true" id="1f605482-8589-48be-a02d-61156f40b980" name="Changes" comment="Rename files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controlador/controlerDices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controlador/controlerPowers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/ModelPowers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/modelDices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/gameRules_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/gameRules_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/inGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/mainMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Cara-6.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +36,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b676a594-31cf-4b46-a528-0d5f5989d5ce" />
+        <option name="url" value="https://github.com/Esteban930402/miniProyecto-GeekOutMaster.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,6 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Owner/Downloads/GeekOutMasters-master (2)/GeekOutMasters-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,6 +76,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="inGame" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="resources.inGame" />
+      <module name="GeekOutMasters" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,7 +93,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683152594285</updated>
-      <workItem from="1683152595403" duration="4814000" />
+      <workItem from="1683152595403" duration="5298000" />
+      <workItem from="1683239631368" duration="607000" />
+      <workItem from="1683470201887" duration="251000" />
+      <workItem from="1683477443702" duration="17919000" />
+      <workItem from="1683506258142" duration="32000" />
+      <workItem from="1683551265528" duration="15879000" />
     </task>
     <task id="LOCAL-00001" summary="Create the base of proyect">
       <created>1683157098263</created>
@@ -79,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683158695493</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Rename files">
+      <created>1683158976675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683158976675</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +154,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create the base of proyect" />
     <MESSAGE value="Added images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added images" />
+    <MESSAGE value="Rename files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
