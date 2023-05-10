@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f605482-8589-48be-a02d-61156f40b980" name="Changes" comment="Rename files">
+    <list default="true" id="1f605482-8589-48be-a02d-61156f40b980" name="Changes" comment="se agrega que al dar click sobre un boton cambie de panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controlador/controlerDices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controlador/controlerPowers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/ModelPowers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/modelDices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/gameRules_1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/gameRules_2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/inGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/mainMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Cara-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/inGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/inGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/modelDices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/modelDices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +28,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -64,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Owner/Downloads/GeekOutMasters-master (2)/GeekOutMasters-master",
+    "last_opened_file_path": "C:/Users/Owner/Downloads/TrabajoJose-main/TrabajoJose-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -98,7 +90,9 @@
       <workItem from="1683470201887" duration="251000" />
       <workItem from="1683477443702" duration="17919000" />
       <workItem from="1683506258142" duration="32000" />
-      <workItem from="1683551265528" duration="15879000" />
+      <workItem from="1683551265528" duration="17495000" />
+      <workItem from="1683605461584" duration="1900000" />
+      <workItem from="1683630363682" duration="21051000" />
     </task>
     <task id="LOCAL-00001" summary="Create the base of proyect">
       <created>1683157098263</created>
@@ -128,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683158976675</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se agrega que al dar click sobre un boton cambie de panel">
+      <created>1683591326850</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683591326850</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +156,8 @@
     <MESSAGE value="Create the base of proyect" />
     <MESSAGE value="Added images" />
     <MESSAGE value="Rename files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename files" />
+    <MESSAGE value="se agrega que al dar click sobre un boton cambie de panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrega que al dar click sobre un boton cambie de panel" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

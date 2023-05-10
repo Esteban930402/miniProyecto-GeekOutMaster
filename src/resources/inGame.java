@@ -18,18 +18,11 @@ public class inGame extends JFrame {
     public JPanel ventana, dadosActivos, dadosInactivos, puntaje, dadosUtilizados, containerButton, containerInGame;
     public ImageIcon imageDices;
 
-    public JLabel presionado;
     public JButton[] dados;
     public JButton rules, lanzarDados, terminarRonda;
     public listener listener;
-    public accionCorazon accionCorazon;
-    public accionMeeple accionMeeple;
-    public accionCohete accionCohete;
-    public accionDragon accionDragon;
-    public accionHeroe accionHeroe;
-    public accionCuarenta accionCuarenta;
-
-
+    public boolean clickCount=true;
+    int numeroAccion=0;
     public modelDices modelDices;
 
     public dices prueba;
@@ -92,17 +85,21 @@ public class inGame extends JFrame {
         this.ventana = new JPanel(new BorderLayout());
 
         this.dadosActivos = new JPanel();//  Pnael dados activos
+        dadosActivos.setBorder(BorderFactory.createTitledBorder("Dados Activos"));
         dadosActivos.setLayout(new GridLayout(3, 3));
-        dadosActivos.addMouseListener(listener);
 
         this.dadosInactivos = new JPanel(); // panel dados inactivos
+        dadosInactivos.setBorder(BorderFactory.createTitledBorder("Dados Inactivos"));
         dadosInactivos.setLayout(new GridLayout(3, 3));
 
         this.puntaje = new JPanel(); // panel puntaje
+        puntaje.setBorder(BorderFactory.createTitledBorder("Puntaje"));
+
 
         this.dadosUtilizados = new JPanel(); // panel dados utilizados
 
         dadosUtilizados.setLayout(new GridLayout(3, 3));
+        dadosUtilizados.setBorder(BorderFactory.createTitledBorder("Dados Activos"));
         dadosUtilizados.setOpaque(false);
         dadosUtilizados.setBorder(null);
 
@@ -119,18 +116,25 @@ public class inGame extends JFrame {
             imageDices = new ImageIcon(getClass().getResource("/resources/dice.png"));
             if (i < 7) {
                 dados[i] = new JButton();
+                dados[i].setOpaque(false);
+                dados[i].setBorder(null);
+                dados[i].setBorderPainted(false);
                 dados[i].setIcon(imageDices);
                 dadosActivos.add(dados[i]);
                 dados[i].addMouseListener(listener);
+                dados[i].addActionListener(listener);
             } else if (i > 6) {
                 dados[i] = new JButton();
+                dados[i].setOpaque(false);
+                dados[i].setBorder(null);
+                dados[i].setBorderPainted(false);
                 dados[i].setIcon(imageDices);
                 dadosInactivos.add(dados[i]);
                 dados[i].addMouseListener(listener);
+                dados[i].addActionListener(listener);
             }
-
         }
-
+        dadosInactivos.setEnabled(false);
         setContentPane(ventana);
     }
 
@@ -150,67 +154,76 @@ public class inGame extends JFrame {
     /**
      * inner class that extends an Adapter Class or implements Listeners used by GUI class
      */
+    public void contardados(){
+        int count =0;
+        int puntaje=0;
+        for (Component comp : dadosActivos.getComponents()){
+            if (comp instanceof JButton){
+                JButton button = (JButton) comp;
+                if(button.getText().contains("3"));
+                count++;
+            }
+        }
+        switch (count){
+            case 1:
+                puntaje=1;
+                break;
+            case 2:
+                puntaje=3;
+                break;
+            case 3:
+                puntaje=6;
+                break;
+            case 4:
+                puntaje=10;
+                break;
+            case 5:
+                puntaje=15;
+                break;
+            case 6:
+                puntaje=21;
+                break;
+            case 7:
+                puntaje=28;
+                break;
+            case 8:
+                puntaje=36;
+                break;
+            case 9:
+                puntaje=45;
+                break;
+            case 10:
+                puntaje=55;
+                break;
+        }
+        System.out.println(puntaje);
+    }
     public void acomodarPartida(){
         dadosActivos.removeAll();
         dadosInactivos.removeAll();
+        dadosUtilizados.removeAll();
+        dadosActivos.repaint();
+        dadosActivos.revalidate();
+        dadosInactivos.revalidate();
+        dadosInactivos.repaint();
+        dadosUtilizados.revalidate();
+        dadosUtilizados.repaint();
 
         for (int i = 0; i < dados.length; i++) {
+            imageDices = new ImageIcon(getClass().getResource("/resources/dice.png"));
             if (i < 7) {
                 dados[i].setIcon(imageDices);
+                dados[i].setOpaque(false);
+                dados[i].setBorder(null);
+                dados[i].setBorderPainted(false);
                 dadosActivos.add(dados[i]);
             } else if (i > 6) {
-                dados[i] = new JButton();
                 dados[i].setIcon(imageDices);
+                dados[i].setOpaque(false);
+                dados[i].setBorder(null);
+                dados[i].setBorderPainted(false);
                 dadosInactivos.add(dados[i]);
             }
-
-        }
-
-    }
-
-    private class accionCorazon implements  ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-    private class accionMeeple implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private class accionCohete implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private class accionHeroe implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-    private class accionDragon implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private class accionCuarenta implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
         }
     }
     private class listener implements ActionListener, MouseListener {
@@ -223,10 +236,7 @@ public class inGame extends JFrame {
                 lanzarDados.setEnabled(false);
                 terminarRonda.setEnabled(true);
                 acomodarPartida();
-                dadosUtilizados.removeAll();
-                dadosUtilizados.revalidate();
-                dadosUtilizados.repaint();
-
+                dadosInactivos.setEnabled(false);
                 for (int i = 0; i < 10; i++) {
                     caras[i] = prueba.getDicesValue();
                     imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
@@ -257,63 +267,143 @@ public class inGame extends JFrame {
             }
             if (e.getSource()==inGame.this.terminarRonda){
                 lanzarDados.setEnabled(true);
+                contardados();
+                acomodarPartida();
             }
             if (e.getSource()==inGame.this.rules){
 
-
             }
+            /*for (int i=0; i<dados.length;i++) {
+                if(clickCount=false) {
+                    if (e.getSource() == dados[i] && numeroAccion == 5) {
+                        caras[i] = caras[i] - 7;
+                        imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
+                        dados[i].setIcon(imageDices);
+                        dadosActivos.revalidate();
+                        dadosActivos.repaint();
+                        numeroAccion = 0;
+                        clickCount = true;
+
+                    }
+                }
+            }*/
         }
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            for (int i = 0;i<10;i++){
-                if(e.getSource()==dados[i]){
-                    if(caras[i]==1){
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
-                        //caras[i]=7-caras[i];
-                        //imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
-                        //dados[i].setIcon(imageDices);
-                    }
-                    if (caras[i]==2){
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
-                    }
-                    if (caras[i]==3) {
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
-                    }
-                    if (caras[i]==4) {
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
+
+                for (int i = 0;i<10;i++){
+                    if(e.getSource()==dados[i]) {
+                       if (clickCount == true) {
+                            if (caras[i] == 1) {
+                                dadosActivos.remove(dados[i]);
+                                dadosUtilizados.add(dados[i]);
+                                dados[i].setEnabled(false);
+                                dadosActivos.revalidate();
+                                dadosActivos.repaint();
+                                numeroAccion = 1;
+                                clickCount = false;
+                                //caras[i]=7-caras[i];
+                                //imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
+                                //dados[i].setIcon(imageDices);
+                            }
+                            if (caras[i] == 2) {
+
+                            }
+                            if (caras[i] == 3) {
+
+                            }
+                            if (caras[i] == 4) {
+                                dadosActivos.setEnabled(false);
+                                dadosActivos.remove(dados[i]);
+                                dadosUtilizados.add(dados[i]);
+                                dados[i].setEnabled(false);
+                                dadosActivos.revalidate();
+                                dadosActivos.repaint();
+                                dadosInactivos.revalidate();
+                                dadosInactivos.repaint();
+                                numeroAccion = 4;
+                                clickCount = false;
+
+                            }
+                            if (caras[i] == 5) {
+                                dadosActivos.remove(dados[i]);
+                                dadosUtilizados.add(dados[i]);
+                                dados[i].setEnabled(false);
+                                dadosActivos.revalidate();
+                                dadosActivos.repaint();
+                                numeroAccion = 5;
+                                clickCount = false;
+                            }
+                            if (caras[i] == 6) {
+                                dadosActivos.remove(dados[i]);
+                                dadosUtilizados.add(dados[i]);
+                                dados[i].setEnabled(false);
+                                dadosActivos.revalidate();
+                                dadosActivos.repaint();
+                                numeroAccion=6;
+                                clickCount = false;
+                            }
+
+                            System.out.println("Se presiono el boton " + i + " y: " + caras[i] + "Estado: " + clickCount);
+
+                        } else {
+                           if (e.getSource() == dados[i] && numeroAccion == 5) {
+                               caras[i]=7-caras[i];
+                               imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
+                               dados[i].setIcon(imageDices);
+                               clickCount=true;
+                               numeroAccion=0;
+                           }
+                           if (e.getSource() == dados[i] && numeroAccion == 6) {
+                               dados[i].setEnabled(false);
+                               dadosInactivos.add(dados[i]);
+                               dadosActivos.repaint();
+                               dadosActivos.revalidate();
+                               dadosInactivos.repaint();
+                               dadosInactivos.revalidate();
+                               clickCount=true;
+                               numeroAccion=0;
+                           }
+                           if (e.getSource() == dados[i] && numeroAccion == 1) {
+                               caras[i]=prueba.getRelanzar();
+                               imageDices = new ImageIcon(getClass().getResource("/resources/" + caras[i] + ".png"));
+                               dados[i].setIcon(imageDices);
+                               clickCount=true;
+                               numeroAccion=0;
+
+                           }
+                           /*if (e.getSource() == dados[i] && numeroAccion == 2) {
+
+
+                           }
+                           if (e.getSource() == dados[i] && numeroAccion == 3) {
+
+
+                           }*/
+                           if (e.getSource() == dados[i] && numeroAccion == 4) {
+                                dadosActivos.add(dados[i]);
+                                dadosInactivos.remove(dados[i]);
+                                dadosActivos.repaint();
+                                dadosActivos.revalidate();
+                                dadosInactivos.revalidate();
+                                dadosInactivos.repaint();
+                                dadosActivos.setEnabled(true);
+                                dadosInactivos.setEnabled(false);
+                                dadosInactivos.removeMouseListener(this);
+                                clickCount=true;
+                                numeroAccion=0;
+
+                           }
+
+                       }
 
                     }
-                    if (caras[i]==5) {
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
-                    }
-                    if (caras[i]==6) {
-                        dadosActivos.remove(dados[i]);
-                        dadosUtilizados.add(dados[i]);
-                        dadosActivos.revalidate();
-                        dadosActivos.repaint();
-                    }
-
-                    System.out.println("Se presiono el boton "+i+" y: "+caras[i]);
                 }
-            }
-            System.out.println(e.getSource());
         }
+
+
+
 
         @Override
         public void mousePressed(MouseEvent e) {

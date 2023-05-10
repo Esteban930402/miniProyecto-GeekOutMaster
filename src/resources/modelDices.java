@@ -39,13 +39,7 @@ public class modelDices {
         caras[8]=dice9.getDicesValue();
         caras[9]=dice10.getDicesValue();
     }
-    public void asingPower(){
-        for (int i=0;i<10;i++){
-            if (caras[i]==i){
-                System.out.println("dado"+i);
-            }
-        }
-    }
+
 
     public int[] getCaras(){
         return caras;
